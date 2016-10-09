@@ -1,0 +1,12 @@
+function [MSE] = Calculate_MSE(validate,W,M,X_V)
+N=size(validate,1);
+MSE = 0;
+
+    Y_C=X_V'*W;
+    MSE=sum(validate(i+M)-Y_C).^2);
+]
+MSE = MSE/N;
+
+end
+
+
