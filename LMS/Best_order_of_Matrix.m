@@ -1,5 +1,7 @@
-function []=Best_order_of_Matrix(data)
-  E_m=100000000000000000000;
+function []=Best_order_of_Matrix()
+load ('training.mat');  
+data=training
+E_m=100000000000000000000;
   E_min=0;
   for m=3:30
     n=1;
