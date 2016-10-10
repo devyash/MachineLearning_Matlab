@@ -3,10 +3,9 @@ load ('training.mat');
 load('validate.mat');
 N=size(training,1);
 N_V=size(validate,1);
-
+OUTPUT=zeros(28,10);
 for M=3:30
     W=zeros(M,1);
-    e=0;
     X_T=Calculate_X(M,training);
     D_T=Calculate_D(M,validate);
     X_V=Calculate_X(M,validate);
@@ -15,7 +14,7 @@ for M=3:30
     Lamda_Max=max(svd(R));
     for j=1:10
             Mu=(1/Lamda_Max)/j;
-            W=train(W,e,X_T,Mu,training,M);
+            [W,ZB]=train(W,X_T,Mu,training,M);
             W=flipud(W);
             MSE=Calculate_MSE(validate,W,M,X_V,X_T);
             OUTPUT(M-2,j)=MSE;
