@@ -7,7 +7,7 @@ load ('training.mat');
 load('validate.mat');
 N=size(training,1);
 N_V=size(validate,1);
-M=4;
+M=3;
 W=zeros(M,1);
 X_T=Calculate_X(M,training);
 D_T=Calculate_D(M,validate);
@@ -16,9 +16,17 @@ D_V=Calculate_D(M,validate);
 R=X_T*(X_T')/(N-M);
 Lamda_Max=max(svd(R));
 j=700;
-Mu=(1/Lamda_Max)/j;
+Mu=0.003959;
 [W,OUTPUT]=train(W,X_T,Mu,training,M);
-plot(OUTPUT);
+Mu=0.003959/3;
+W=zeros(M,1);
+[W,OUTPUTB]=train(W,X_T,Mu,training,M);
+Mu=0.003959/6;
+W=zeros(M,1);
+[W,OUTPUTC]=train(W,X_T,Mu,training,M);
+
+plot(1:N-M,OUTPUT);
+legend('Optimum','Step size A','Step size B')
 xlabel('Iterations');
 ylabel('MSE');
     
