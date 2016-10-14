@@ -1,0 +1,8 @@
+clear;
+load('project1.mat');
+A=0:
+for M=1:30
+
+    mu=0.009;
+[e,w]=nlms1(mu,M,primary,reference,0.00001);
+E()

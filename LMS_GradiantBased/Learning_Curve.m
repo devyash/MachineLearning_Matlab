@@ -15,6 +15,7 @@ X_V=Calculate_X(M,validate);
 D_V=Calculate_D(M,validate);
 R=X_T*(X_T')/(N-M);
 Lamda_Max=max(svd(R));
+<<<<<<< HEAD
 j=700;
 Mu=0.003959;
 [W,OUTPUT]=train(W,X_T,Mu,training,M);
@@ -31,3 +32,18 @@ xlabel('Iterations');
 ylabel('MSE');
     
 
+=======
+j=1500;
+Mu=(1/Lamda_Max)/j;
+[W,OUTPUT]=train(W,e,X,Mu,training,M);
+j=1300;
+Mu=(1/Lamda_Max)/j;
+W=zeros(M,1);
+[W,OUTPUTA]=train(W,e,X,Mu,training,M);
+j=500;
+Mu=(1/Lamda_Max)/j;
+W=zeros(M,1);
+[W,OUTPUTB]=train(W,e,X,Mu,training,M);
+plot(1:N-M,OUTPUT,1:N-M,OUTPUTA,1:N-M,OUTPUTB)
+legend('Step size A',' Step Size B',' StepSize Optimal');
+>>>>>>> Master
