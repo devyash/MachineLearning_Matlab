@@ -5,7 +5,8 @@ N=140;
 %N C1
 N_C1=Calculate_NJ(Species,N);
 N_C2=N-N_C1;
-
+[Mean_X_T_C1, Mean_X_T_C2]=Calculate_Mean(Species,X_T,N,N_C1,N_C2);
+[Mean_X_T_C1, Mean_X_T_C2]=Calculate_Mean(X_C1,);
 %Prior Probabilities
 PP_C1=N_C1/N;
 PP_C2=1-PP_C1;
@@ -13,14 +14,8 @@ PP_C2=1-PP_C1;
 %Calculate X_C
 X_C1=Calculate_X_C(X_T,1,N_C1,Species);
 X_C2=Calculate_X_C(X_T,0,N_C2,Species);
-
-%[Mean_X_T_C1, Mean_X_T_C2]=Calculate_Mean(Species,X_T,N,N_C1,N_C2);
-Mean_X_T_C1=Calculate_Mean(X_C1,N_C1);
-Mean_X_T_C2=Calculate_Mean(X_C2,N_C2);
-
 %Variance
 V_C1=Calculate_Variance(X_C1,Mean_X_T_C1,N_C1);
-V_C2=Calculate_Variance(X_C2,Mean_X_T_C2,N_C2);
+V_C2=Calculate_Variance(X_T,Mean_X_T_C2,N_C2,N);
 
-%Discriminat function
-G_C1=Calculate_G(X_V,Mean_X_T_C1,V_C1,PP_C1);
+%G_C1=Calculate_G(X_T,X_V,Mean_X_T_C1,V_C1,PP_C1);
