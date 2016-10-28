@@ -15,4 +15,4 @@ PP_C2=1-PP_C1;
 V_C1=Calculate_Variance(X_T,Mean_X_T_C1,N_C1,N);
 V_C2=Calculate_Variance(X_T,Mean_X_T_C2,N_C2,N);
 
-Calculate_Dfn(X,Mean_X_T_C1, Mean_X_T_C2,)
+G_C1=Calculate_G(X_T,X_V,Mean_X_T_C1,V_C1,PP_C1);
