@@ -24,3 +24,6 @@ V_C2=Calculate_Variance(X_C2,Mean_X_T_C2,N_C2);
 
 %Discriminat function
 G_C1=Calculate_G(X_V,Mean_X_T_C1,V_C1,PP_C1);
+G_C2=Calculate_G(X_V,Mean_X_T_C2,V_C2,PP_C2);
+OUTPUT_C=Calculate_OUTPUT(G_C1,G_C2);
+Accuracy=Calculate_Accuarcy(OUTPUT_C,Species)
