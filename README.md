@@ -1,4 +1,4 @@
-# MachineLearning Algorithms written in MATLAB
+# Machine Learning Algorithms written in MATLAB
 ## Contains Various Machine Learning Algrithms written by me from the respective research paper or projects reports
 - Least Mean Square, Gradient Based Least Mean Square code.
 - NLMS Algorithm
@@ -11,8 +11,9 @@
   This project is written in MATLAB. It uses adaptive filter to improve signal voice. The project input contains 2 voice signals:
   -Reference Signal:(Voise + Noise)
   -Primary Signal: Noise difference resourse.
+
+You can further read about this problem on 
+[ Article](https://en.wikipedia.org/wiki/Adaptive_filter "Wikepedia Article").
   
-  [Wikipedia Article]("https://en.wikipedia.org/wiki/Adaptive_filter")
-  
-  ### My Research Paper:
+### My Research Paper: [Link]()
   
