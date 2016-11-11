@@ -1,3 +1,5 @@
+clc;
+clear;
 load fisheriris
 X = meas;
 k=3;
@@ -9,7 +11,5 @@ z=(max(D));
 Vd(i)=min(min(sumd)/z(i))
 end
 end
-%tree = linkage(X,'average');
 
-%figure()
-%dendrogram(tree)
+evalclusters(X,'kmeans','DaviesBouldin','klist',2:10)
