@@ -1,5 +1,6 @@
 function [PCA1,PCA2,PCA3,COEFF,SCORE] = CalculatePCA( X )
 %Returns 3 principal componenets
+
 [COEFF,SCORE] = pca(X);
 PCA1=SCORE(:,1);
 PCA2=SCORE(:,2);

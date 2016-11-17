@@ -1,6 +1,6 @@
-function [I ] = Reader( )
+function [I ] = Reader(dirName)
 %Returns Image Matrix
-dirName = 'GallerySet'; %name of the directory
+ %name of the directory
 D = dir(dirName); %command to check files in directory
 I=[];
 for (i=3:length(D)) % a loop of how many file in such directory
