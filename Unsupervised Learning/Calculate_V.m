@@ -1,6 +1,7 @@
 function [ newV ] = Calculate_V(V,X)
 k=size(V,1);
 f=4; %feature
+k1=cell(1,k);
 k1=0,k2=0,k3=0;
 count1=0;
 count2=0;

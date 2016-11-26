@@ -4,9 +4,9 @@ X=Reader('ProbeSet');
 Y=Reader('GallerySet');
 %image(vec2mat(X(:,1),50))
 normX=X-ones(2500,1)*mean(X);
-[PCA1,PCA2,PCA3,COEFF,V] = CalculatePCA( normX );
+%[PCA1,PCA2,PCA3,COEFF,V] = CalculatePCA( normX );
 
-%[PCA1,PCA2,PCA3,V, lamda] = CalculatePCA1(X);
+[PCA1,PCA2,PCA3,V, lamda] = CalculatePCA1(X);
 %PrintPCA123( PCA1,PCA2,PCA3);
 z=0;
 for PC=10:10:100

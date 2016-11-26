@@ -1,4 +1,6 @@
 function [OUTPUT] = test( X,m,W2,W3 )
+%funtion for testing of the trained neural network returns the plot of the
+%neural network
 OUTPUT=zeros(m,1);
 for i=1:m
     a1=[1,X(i,:)];
