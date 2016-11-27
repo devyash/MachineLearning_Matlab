@@ -32,5 +32,7 @@ end
 malePercent=(male/maleop)*100;
 femalePercent=(female/femaleop)*100;
 
-evalclusters(X,'kmeans','gap','klist',2:10)
 evalclusters(X,'kmeans','DaviesBouldin','klist',2:10)
+evalclusters(X,'kmeans','CalinskiHarabasz','klist',2:10)
+evalclusters(X,'kmeans','silhouette','klist',2:10)
+evalclusters(X,'kmeans','gap','klist',2:10)
