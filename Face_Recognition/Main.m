@@ -1,14 +1,21 @@
 clear;
 clc;
-Y=Reader('ProbeSet');
-X=Reader('GallerySet');
-%image(reshape(X(:,1),[50 50]))
+[X,f]=Reader('GallerySet');
+[Y,abs]=Reader('ProbeSet');
+
+
+
+
+
 
 normX=X-ones(2500,1)*mean(X);
+%figure(1)
+%image(reshape(mean(X')',[50 50]),'CDataMapping','scaled')
+%title('Mean Face');
 %[PCA1,PCA2,PCA3,COEFF,V] = CalculatePCA( normX );
 
-[PCA1,PCA2,PCA3,V, lamda] = CalculatePCA1(X);
-%PrintPCA123( PCA1,PCA2,PCA3);
+[PCA1,PCA2,PCA3,PCA4,V, lamda] = CalculatePCA1(X);
+%PrintPCA123( PCA1,PCA2,PCA3,PCA4);
 z=0;
 for PC=10:10:100
     z=z+1;
@@ -34,6 +41,8 @@ for i=1:size(a,1)
     end
 end
 truepositive(z,1)=count/size(a,1);
+falsepositive(z,1)=1-count/size(a,1);
+
 
 end
 
@@ -49,5 +58,19 @@ for i=1:size(a,1)
 end
 truepositivewithoutPCA=count/size(a,1);
 
+%figure
+%subplot(2,1,1);
+%image(reshape(Y(:,1),[50 50]),'CDataMapping','scaled')
+%xlabel('pixels')
+%ylabel('pixels')
+%title('Original Face & Reduced Dimensionality Face')
+%subplot(2,1,2);
+%image(reshape(projectedtest(:,1),[10 10]),'CDataMapping','scaled')
+%xlabel('pixels')
+%ylabel('pixels')
 
 
+plot(10:10:100,falsepositive)
+xlabel('Number of Principal Components')
+ylabel('False Positive')
+title('False Positive vs PCA')

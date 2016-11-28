@@ -26,7 +26,7 @@ temp=0;
 if(female>male)
 temp=female;
 female=male;
-male=female;
+male=temp;
 end
 
 malePercent=(male/maleop)*100;
