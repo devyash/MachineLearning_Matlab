@@ -17,3 +17,6 @@ You can further read about this problem on
   
 ### My Research Paper: [Link](https://github.com/devyash/MachineLearning_Matlab-Python/blob/master/Adaptive%20Noise%20Cancellation%20using%20NLMS%20algorithm/My%20Research%20Paper/Adative%20Noise%20Cancellation%20using%20NLMS%20algorithm.pdf)
   
+## Handwritten Character Recognition
+### My Research Paper: [Link](https://github.com/devyash/MachineLearning_Matlab/blob/master/MNIST/My%20paper/devyashsanghai.pdf)
+
